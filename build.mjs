@@ -1,5 +1,5 @@
 import { build, context } from 'esbuild';
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { cp, mkdir, readFile, writeFile } from 'node:fs/promises';
 
 const options = {
   entryPoints: ['src/main.jsx'],
@@ -10,6 +10,7 @@ const options = {
 };
 
 await mkdir('dist', { recursive: true });
+await cp('public', 'dist', { recursive: true });
 const html = await readFile('index.html', 'utf8');
 await writeFile('dist/index.html', html.replace('/src/main.jsx', '/main.js').replace('</head>', '  <link rel="stylesheet" href="/main.css">\n</head>'));
 

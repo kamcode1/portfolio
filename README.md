@@ -40,6 +40,7 @@ Open http://127.0.0.1:4173. The dev server rebuilds on file changes; stop it wit
 .
 ├── index.html        # HTML shell and SEO / social metadata
 ├── styles.css        # All site styles
+├── public/           # Static assets copied to dist/ (portrait, social image)
 ├── build.mjs         # esbuild build and dev-server script
 ├── src/
 │   ├── main.jsx      # React entry point
