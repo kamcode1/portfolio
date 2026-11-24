@@ -1,18 +1,30 @@
 {
   "name": "kam-ephrem-portfolio",
-  "private": true,
   "version": "1.0.0",
+  "private": true,
+  "description": "Personal portfolio of Kam Ephrem — technology and operations leadership, cloud infrastructure, and delivery.",
+  "author": "Kam Ephrem",
+  "homepage": "https://kam-ephrem-portfolio.pages.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamcode1/portfolio.git"
+  },
   "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "node build.mjs --serve",
     "build": "node build.mjs",
-    "preview": "node build.mjs --serve"
+    "preview": "node build.mjs --serve",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name kam-ephrem-portfolio --branch main"
   },
   "dependencies": {
     "react": "19.1.1",
     "react-dom": "19.1.1"
   },
   "devDependencies": {
-    "esbuild": "0.21.5"
+    "esbuild": "0.21.5",
+    "wrangler": "^4.158.0"
   }
 }
